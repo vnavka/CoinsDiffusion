@@ -96,7 +96,7 @@ namespace CoinDiffusionVP.Models
             {
                 if (item.xl < 1 || item.xl >= item.xh || item.xh >= 10)
                     throw new Exception(String.Format("Not valid x input data in {0} Country", item.name));
-                if (item.yl < 1 || item.yl >= item.xh || item.yh >= 10)
+                if (item.yl < 1 || item.yl >= item.yh || item.yh >= 10)
                     throw new Exception(String.Format("Not valid y input data in {0} Country", item.name));
             }
         }
