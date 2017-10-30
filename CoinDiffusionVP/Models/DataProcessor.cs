@@ -1,10 +1,12 @@
-﻿using CoinDiffusionVP.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace CoinDiffusionVP
+namespace CoinDiffusionVP.Models
 {
 	class DataProcessor
 	{
@@ -56,24 +58,10 @@ namespace CoinDiffusionVP
 				{
 					foreach (var item in source.innerCountries)
 					{
-						writter.WriteLine("Country{0,10}___steps{1,6}",item.name, item.readyStep);
+						writter.WriteLine("Country{0,10}___steps{1,6}", item.name, item.readyStep);
 					}
 				}
 			}
 		}
 	}
-	class Program
-    {
-        static void Main(string[] args)
-        {
-			var infoBase = new DataProcessor();
-			var map = new AreaMap(infoBase.GetInputDataFile());
-
-            while (!map.AreaReady) {
-                map.RunTransaction();
-            }
-
-			infoBase.GetOutputFile(map);
-        }
-    }
 }

@@ -1,0 +1,3 @@
+Country    France___steps  1324
+Country     Spain___steps   380
+Country  Portugal___steps   418

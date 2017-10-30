@@ -123,14 +123,14 @@ namespace CoinDiffusionVP.Models
         {
             if (source == null || destination == null)
                 return;
-
-            for (var i = 0; i < countries; i++)
-            {
-                var _t_coins = source._coins[i] / 1000;
-                source._coins[i] -= _t_coins;
-                destination._coins[i] += _t_coins;
-            }
-        }
+			
+			for (var i = 0; i < countries; i++)
+			{
+				var _t_coins = source._coins[i] / 1000;
+				source._coins[i] -= _t_coins;
+				destination._coins[i] += _t_coins;
+			}
+		}
         private void TestOutput()
         {
             for (var i = 0; i < map.Length; i++)
