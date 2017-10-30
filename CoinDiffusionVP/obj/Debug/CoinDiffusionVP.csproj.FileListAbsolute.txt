@@ -4,3 +4,6 @@ C:\Dev\VS\Labs\Hicko\CoinDiffusionVP\CoinDiffusionVP\bin\Debug\CoinDiffusionVP.p
 C:\Dev\VS\Labs\Hicko\CoinDiffusionVP\CoinDiffusionVP\obj\Debug\CoinDiffusionVP.csprojResolveAssemblyReference.cache
 C:\Dev\VS\Labs\Hicko\CoinDiffusionVP\CoinDiffusionVP\obj\Debug\CoinDiffusionVP.exe
 C:\Dev\VS\Labs\Hicko\CoinDiffusionVP\CoinDiffusionVP\obj\Debug\CoinDiffusionVP.pdb
+C:\Dev\VS\Labs\labpm\CoinsDiffusion\CoinDiffusionVP\bin\Debug\CoinDiffusionVP.exe.config
+C:\Dev\VS\Labs\labpm\CoinsDiffusion\CoinDiffusionVP\obj\Debug\CoinDiffusionVP.exe
+C:\Dev\VS\Labs\labpm\CoinsDiffusion\CoinDiffusionVP\obj\Debug\CoinDiffusionVP.pdb

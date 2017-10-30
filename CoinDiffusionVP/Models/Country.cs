@@ -8,7 +8,7 @@ namespace CoinDiffusionVP.Models
 {
     class Country
     {
-        string name;
+        public string name;
         public int xl, yl, xh, yh;
         public int readyStep { get; set; }
         public Country(string name, int xl, int yl, int xh, int yh)

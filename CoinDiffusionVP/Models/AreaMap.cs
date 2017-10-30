@@ -14,6 +14,7 @@ namespace CoinDiffusionVP.Models
         private int step { get; set; }
         public AreaMap(Country[] countries)
         {
+            ContryValidation(countries);
             this.countries = countries.Length;
             innerCountries = countries;
             step = 0;
@@ -42,13 +43,13 @@ namespace CoinDiffusionVP.Models
                 foreach (var country in innerCountries)
                 {
                     if (country.readyStep == 0)
-                    { 
+                    {
                         if (RunCheckCountryReady(country))
                         {
                             country.readyStep = step;
                         }
                         else
-                        { 
+                        {
                             ready *= 0;
                         }
                     }
@@ -84,11 +85,21 @@ namespace CoinDiffusionVP.Models
             int i = 1;
             foreach (var country in innerCountries)
             {
-                Console.WriteLine("id{0,2} Step{1,5}",i, country.readyStep);
+                Console.WriteLine("id{0,2} Step{1,5}", i, country.readyStep);
                 i++;
             }
         }
         #region private methods
+        private void ContryValidation(Country[] countries)
+        {
+            foreach (var item in countries)
+            {
+                if (item.xl < 1 || item.xl >= item.xh || item.xh >= 10)
+                    throw new Exception(String.Format("Not valid x input data in {0} Country", item.name));
+                if (item.yl < 1 || item.yl >= item.xh || item.yh >= 10)
+                    throw new Exception(String.Format("Not valid y input data in {0} Country", item.name));
+            }
+        }
         private void MakeTransaction(int x, int y)
         {
             if (x > 0) //left trans
@@ -182,8 +193,11 @@ namespace CoinDiffusionVP.Models
         {
             foreach (var item in innerCountries)
             {
-                if (x < item.xh) x = item.xh;
-                if (y < item.yh) y = item.yh;
+                if (x < item.xh)
+                    x = item.xh;
+
+                if (y < item.yh)
+                    y = item.yh;
             }
         }
         #endregion
