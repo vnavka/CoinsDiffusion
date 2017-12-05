@@ -72,13 +72,12 @@ namespace CoinDiffusionVP.Models
         }
         public bool CheckCityReady(City item)
         {
-            var ready = 1;
             for (var i = 0; i < countries; i++)
             {
                 if (item._coins[i] == 0)
-                    ready *= 0;
+                    return false;
             }
-            return ready == 1;
+            return true;
         }
         public void GetFinalInfo()
         {
