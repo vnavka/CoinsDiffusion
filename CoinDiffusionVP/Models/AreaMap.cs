@@ -39,7 +39,7 @@ namespace CoinDiffusionVP.Models
             get
             {
                 step++;
-                var ready = 1;
+                var ready = true;
                 foreach (var country in innerCountries)
                 {
                     if (country.readyStep == 0)
@@ -50,11 +50,11 @@ namespace CoinDiffusionVP.Models
                         }
                         else
                         {
-                            ready *= 0;
+                            ready = false;
                         }
                     }
                 }
-                return ready == 1;
+                return ready;
             }
         }
         public bool RunCheckCountryReady(Country item)
