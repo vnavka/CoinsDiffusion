@@ -59,16 +59,15 @@ namespace CoinDiffusionVP.Models
         }
         public bool RunCheckCountryReady(Country item)
         {
-            var ready = 1;
             for (var j = item.xl - 1; j < item.xh; j++)
             {
                 for (var k = item.yl - 1; k < item.yh; k++)
                 {
                     if (!CheckCityReady(map[j][k]))
-                        ready *= 0;
+                        return false;
                 }
             }
-            return ready == 1;
+            return true;
         }
         public bool CheckCityReady(City item)
         {
